@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to the haircut</title>
+</head>
+	<h1>Welcome to the haircut</h1>
+	<p>Your head is our duty</p>
+
+<body>
+	<h2>Here are all our services!</h2>
+
+	<!-- Item 1 -->
+	<p>normal: 12RMB</p>
+	<img src="http://img.alicdn.com/imgextra/i3/176306067/TB2FHwIqilnpuFjSZFgXXbi7FXa_!!176306067-0-beehive-scenes.jpg">
+	<br>
+
+	<!-- Item 2 -->
+	<p>cool: 15RMB</p>
+	<img src="http://img.alicdn.com/imgextra/i3/176306067/TB22CZWqmFmpuFjSZFrXXayOXXa_!!176306067-0-beehive-scenes.jpg">
+
+	<!-- Item 3 -->
+	<p>unique: 20RMB</p>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527942674&di=996ab69caa8ccad02accb7622c50910e&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.tupianzj.com%2Fuploads%2Fallimg%2F151031%2F9-151031101246.jpg">
+
+	<!-- Order Form -->
+	<h2>Make your appointment</h2>
+	<form action="{% url 'haircut:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="type" placeholder="Please Type Which haircut You Want"><br>
+		<input type="text" name="name" placeholder="name"><br>
+		<input type="text" name="time" placeholder="time"><br>
+		<input type="submit" value="make your appointment">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your appointment:</h1>
+	name: {{name}}
+	<p>type appointment: {{type}}</p>
+	<p>time: {{time}}</p>
+
+</body>
+</html>
